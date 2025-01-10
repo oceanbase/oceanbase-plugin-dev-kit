@@ -20,6 +20,16 @@ else
     export BUILD_NUMBER=${4}
 fi
 
+GIT_REPO_ARG=""
+GIT_TAG_ARG=""
+if [ -n "$OCEANBASE_GIT_REPO" ]; then
+  GIT_REPO_ARG="-DOCEANBASE_GIT_REPO=${OCEANBASE_GIT_REPO}"
+fi
+
+if [ -n "$OCEANBASE_GIT_TAG" ]; then
+  GIT_TAG_ARG="-DOCEANBASE_GIT_TAG=${OCEANBASE_GIT_TAG}"
+fi
+
 echo "[BUILD] args: TOP_DIR=${TOP_DIR} RELEASE=${RELEASE} BUILD_NUMBER=${BUILD_NUMBER}"
 
 cd ${TOP_DIR}
@@ -27,6 +37,6 @@ cd ${TOP_DIR}
 # comment dep_create to prevent t-abs from involking it twice.
 mkdir build &&
   cd build &&
-  cmake -DBUILD_NUMBER=$BUILD_NUMBER -DPACKAGE_VERSION=${PACKAGE_VERSION} -DCPACK_RPM_PACKAGE_RELEASE=$RELEASE .. &&
+  cmake ${GIT_REPO_ARG} ${GIT_TAG_ARG} -DBUILD_NUMBER=$BUILD_NUMBER -DPACKAGE_VERSION=${PACKAGE_VERSION} -DCPACK_RPM_PACKAGE_RELEASE=$RELEASE .. &&
   cpack -G RPM &&
   mv *.rpm $CURDIR

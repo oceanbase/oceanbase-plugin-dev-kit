@@ -35,7 +35,8 @@ echo "[BUILD] args: TOP_DIR=${TOP_DIR} RELEASE=${RELEASE} BUILD_NUMBER=${BUILD_N
 cd ${TOP_DIR}
 
 # comment dep_create to prevent t-abs from involking it twice.
-mkdir build &&
+rm -rf deps/oceanbase
+mkdir -p build &&
   cd build &&
   cmake --log-level=TRACE ${GIT_REPO_ARG} ${GIT_TAG_ARG} -DBUILD_NUMBER=$BUILD_NUMBER -DPACKAGE_VERSION=${PACKAGE_VERSION} -DCPACK_RPM_PACKAGE_RELEASE=$RELEASE .. &&
   cpack -G RPM &&

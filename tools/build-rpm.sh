@@ -38,6 +38,6 @@ cd ${TOP_DIR}
 rm -rf deps/oceanbase
 mkdir -p build &&
   cd build &&
-  cmake --trace-expand --debug-output --log-level=TRACE ${GIT_REPO_ARG} ${GIT_TAG_ARG} -DBUILD_NUMBER=$BUILD_NUMBER -DPACKAGE_VERSION=${PACKAGE_VERSION} -DCPACK_RPM_PACKAGE_RELEASE=$RELEASE .. &&
+  cmake ${GIT_REPO_ARG} ${GIT_TAG_ARG} -DPACKAGE_RELEASE=$RELEASE -DPACKAGE_VERSION=${PACKAGE_VERSION} .. &&
   cpack -G RPM &&
   mv *.rpm $CURDIR

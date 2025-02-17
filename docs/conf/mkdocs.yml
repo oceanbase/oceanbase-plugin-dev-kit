@@ -1,0 +1,86 @@
+site_name: OceanBase Plugin Development Kit
+site_url: https://oceanbase.github.io/oceanbase-plugin-dev-kit
+repo_url: https://github.com/oceanbase/oceanbase-plugin-dev-kit
+repo_name: oceanbase/oceanbase-plugin-dev-kit
+edit_uri: edit/main/docs/
+copyright: Copyright © 2024 OceanBase
+docs_dir: ../zh
+site_dir: ../site
+plugins:
+  - search
+  - git-authors
+nav:
+  - 首页: index.md
+  - 快速开始: 
+    - 用户手册: user-guide.md
+    - 插件开发者手册: how-to-dev.md
+    - 新增插件: add-new-plugin.md
+    - 构建手册: how-to-build.md
+  - API 手册: doxy/html/index.html
+
+markdown_extensions:
+  - pymdownx.highlight:
+      linenums: true
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+theme:
+  name: material
+  language: zh
+  features:
+    - search.highlight
+    - navigation.sections
+    - navigation.path
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+    - content.action.edit
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/oceanbase-plugin-dev-kit
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+      block_tag: 'pre'
+
+extra_javascript:
+    - ./assets/mathjax.js
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

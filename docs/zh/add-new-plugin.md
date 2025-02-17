@@ -58,7 +58,7 @@ title: 如何新增插件类型
 ## 记录变更日志
 在CHANGELOG.md中描述本次变更的内容。
 
-## 发布开发包 TODO
+## 发布开发包
 插件开发者可以仅依赖开发包提供的内容开发编译插件。可以使用rpm目录下的oceanbase-plugin-devel-build.sh脚本打包RPM包，同时也需要通过发布平台发布新版本的开发包。
 
 # 插件接口或API变更
@@ -97,5 +97,3 @@ title: 如何新增插件类型
 
 ## 代码注释
 对外提供的接口应该具有良好风格的代码注释，并使用doxygen 格式编写注释，注释语法可以参考[doxygen文档](https://doxygen.cpp.org.cn/manual/index.html)。
-
-

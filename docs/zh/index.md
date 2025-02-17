@@ -1,5 +1,5 @@
 ---
-title: 插件开发包介绍
+title: OceanBase 插件开发包
 hide:
   - navigation
   - toc
@@ -7,7 +7,6 @@ hide:
 ---
 
 # 简介
-
 随着数据库技术的发展和业务需求的不断变化，灵活性和可扩展性已成为现代数据库系统的核心要求。为了满足用户对高效、灵活的功能扩展需求，OceanBase 推出了插件机制，使得扩展 OceanBase 的功能变得更加轻松和高效。 OceanBase 插件机制的主要特点包括：
 
 **简化扩展：**通过插件机制，用户可以轻松地为 OceanBase 添加新的功能模块，无需修改核心代码。这种模块化设计使得功能扩展变得更加方便和直观。
@@ -22,17 +21,11 @@ hide:
 
 总之，OceanBase 的插件机制使得数据库系统的功能扩展和更新更加高效、灵活和可控。无论是增加新的功能模块，还是定制专属应用，都可以通过插件轻松实现。通过这一机制，OceanBase 能够更好地满足用户的多样化需求，助力企业实现业务的快速增长和创新。
 
-本仓库维护OceanBase的插件开发包：
-- 插件开发包打包（开发头文件位于[OceanBase](https://github.com/oceanbase/oceanbase)源码[src/plugin/include/oceanbase](https://github.com/oceanbase/oceanbase/tree/master/src/plugin/include/oceanbase)下）；
-- 示例代码。参考 src/examples 目录；
-- 插件开发文档。
-
 # 文档
 为了方便用户使用插件和开发者开发插件，我们提供了必要的文档：
 
-- [使用手册](https://oceanbase.github.io/oceanbase-plugin-dev-kit/user-guide/)：介绍如何安装卸载插件；
-- [开发手册](https://oceanbase.github.io/oceanbase-plugin-dev-kit/how-to-dev/)：介绍如何开发一个插件；
-- [API 手册](https://oceanbase.github.io/oceanbase-plugin-dev-kit/doxy/html/index.html)；
-- [新增插件](https://oceanbase.github.io/oceanbase-plugin-dev-kit/add-new-plugin/)：如何给OceanBase新增一个类型的插件。
+- [使用手册](user-guide.md)：介绍如何安装卸载插件；
 
-如果有任何问题或建议，欢迎提[Issue](https://github.com/oceanbase/oceanbase-plugin-dev-kit/issues)。
+- [开发手册](how-to-dev.md)：介绍如何开发一个插件；
+
+- [新增插件](add-new-plugin.md)：如何给OceanBase新增一个类型的插件。

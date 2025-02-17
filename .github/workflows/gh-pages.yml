@@ -41,7 +41,7 @@ jobs:
         working-directory: ./docs
 
       - name: Doxygen Action
-        uses: mattnotmitt/doxygen-action@v1.9.5
+        uses: mattnotmitt/doxygen-action@v1.12
         with:
           working-directory: .
           doxyfile-path: ./docs/conf/Doxyfile

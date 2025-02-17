@@ -5,6 +5,7 @@ repo_name: oceanbase/oceanbase-plugin-dev-kit
 edit_uri: edit/main/docs/
 copyright: Copyright © 2024 OceanBase
 docs_dir: ../zh
+site_dir: ../site
 plugins:
   - search
   - git-authors

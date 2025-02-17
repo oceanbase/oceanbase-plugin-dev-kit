@@ -17,6 +17,12 @@
 
 #include "oceanbase/ob_plugin_ftparser.h"
 
+/**
+ * @defgroup ExampleFtParser Fulltext Parser Plugin Example
+ * @brief This is an example for fulltext parser plugin
+ * @{
+ */
+
 namespace oceanbase {
 namespace example {
 
@@ -218,9 +224,17 @@ int ftparser_get_add_word_flag(uint64_t *flag)
   return ret;
 }
 
+/**
+ * plugin init function
+ * @param plugin The plugin param
+ * @details This function will be called when OceanBase load the library.
+ * We register the plugin(s) in this function and we can initialize other
+ * variables here.
+ */
 int plugin_init(ObPluginParamPtr plugin)
 {
   int ret = OBP_SUCCESS;
+  /// A ftparser plugin descriptor
   ObPluginFTParser parser = {
     .init              = NULL,
     .deinit            = NULL,
@@ -230,6 +244,7 @@ int plugin_init(ObPluginParamPtr plugin)
     .get_add_word_flag = ftparser_get_add_word_flag
   };
 
+  /// register the ftparser plugin
   ret = OBP_REGISTER_FTPARSER(plugin,
                               "example_ftparser",
                               parser,
@@ -245,3 +260,5 @@ OBP_DECLARE_PLUGIN(example_ftparser)
   plugin_init, // init        // 插件的初始化函数，在plugin_init中注册各个插件功能
   nullptr, // deinit          // 插件的析构函数
 } OBP_DECLARE_PLUGIN_END;
+
+/** @} */

@@ -38,6 +38,8 @@ jobs:
       - name: Setup Pages
         run: |
           mkdocs build -f conf/mkdocs.yml
+          ls -l
+          ls -l ./site
         working-directory: ./docs
 
       - name: Doxygen Action

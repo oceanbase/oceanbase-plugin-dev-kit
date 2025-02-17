@@ -1,12 +1,9 @@
----
-title: 插件开发包介绍
-hide:
-  - navigation
-  - toc
-  - path
----
-
 # 简介
+<div align="left">
+
+[![Chinese Doc](https://img.shields.io/badge/文档-简体中文-blue)](https://oceanbase.github.io/miniob/)
+
+</div>
 
 随着数据库技术的发展和业务需求的不断变化，灵活性和可扩展性已成为现代数据库系统的核心要求。为了满足用户对高效、灵活的功能扩展需求，OceanBase 推出了插件机制，使得扩展 OceanBase 的功能变得更加轻松和高效。 OceanBase 插件机制的主要特点包括：
 

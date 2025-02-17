@@ -37,6 +37,7 @@ jobs:
 
       - name: Setup Pages
         run: |
+          cp -rf conf/assets zh/assets
           mkdocs build -f conf/mkdocs.yml
         working-directory: ./docs
 

@@ -42,8 +42,8 @@ theme:
     - toc.follow
     - content.code.copy
     - content.action.edit
-  logo: ../conf/assets/logo.png
-  favicon: ../conf/assets/favicon.ico
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
   icon:
     repo: fontawesome/brands/github
   palette:

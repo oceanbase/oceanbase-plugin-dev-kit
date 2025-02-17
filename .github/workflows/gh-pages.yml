@@ -39,11 +39,13 @@ jobs:
         run: |
           mkdocs build -f conf/mkdocs.yml
         working-directory: ./docs
+
       - name: list
         run: |
-	  ls -ltr .
-	  ls -ltr ./conf/
+          ls -ltr .
+          ls -ltr ./conf/
 	working-directory: ./docs
+
       - name: Doxygen Action
         uses: mattnotmitt/doxygen-action@v1.12
         with:

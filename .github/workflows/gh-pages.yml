@@ -28,7 +28,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Dependencies
         run: |
-          python3 -m pip install -r ./docs/requirements.txt
+          python3 -m pip install -r ./docs/conf/requirements.txt
 
       - name: Download OceanBase Source
         run: |

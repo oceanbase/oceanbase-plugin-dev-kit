@@ -20,6 +20,7 @@ yum install -y cmake make glibc-devel glibc-headers gcc gcc-c++
 ```
 
 ## 下载oceanbase plugin开发套件 TODO
+> 即将发布
 ```bash
 yum install -y oceanbase-plugin-dev-kit
 ```
@@ -42,7 +43,7 @@ CMakeLists.txt 文件中使用 "TODO" 指明了需要修改的内容，包括：
 + SOURCES 实现文件，可以是C代码文件或C++代码文件，这里是一个列表，可以写多个。当你增加了新的实现文件时，应该修改这里的代码。注意不要把头文件放到这里。
 
 ## 实现功能
-接下来可以按照特定的接口来实现你的插件，每个插件都有自己特定的接口，需要按照约定来实现。各个插件接口的定义可以在 oceanbase-plugin-dev-kit 开发包中的头文件中找到，也可以参考文档 TODO
+接下来可以按照特定的接口来实现你的插件，每个插件都有自己特定的接口，需要按照约定来实现。各个插件接口的定义可以在 oceanbase-plugin-dev-kit 开发包中的头文件中找到，也可以参考[文档](https://hnwyllmm.github.io/oceanbase-plugin-dev-kit/doxy/html/topics.html)。
 
 需要特别注意的是，一个链接库可以实现一到多个插件，在实现文件中定义，示例：
 

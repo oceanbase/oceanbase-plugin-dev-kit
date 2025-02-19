@@ -19,7 +19,7 @@ title: 开发者文档
 yum install -y cmake make glibc-devel glibc-headers gcc gcc-c++
 ```
 
-## 下载oceanbase plugin开发套件 TODO
+## 下载oceanbase plugin开发套件
 > 即将发布
 ```bash
 yum install -y oceanbase-plugin-dev-kit
@@ -186,24 +186,25 @@ cmake -DCMAKE_PREFIX_PATH=`/oceanbase-plugin-devel/install/prefix` ..
 make
 ```
 
-## 可以不使用开发包oceanbase-plugin-devel开发插件吗 TODO 看是否需要保留此节
+## 可以不使用开发包oceanbase-plugin-devel开发插件吗
 如果要基于比较新的插件接口开发，而OceanBase还没有发包，或者没有对应某个操作系统的包，也可以基于OceanBase源码开发，步骤如下：
 
 ```bash
 # 下载源码
-git clone https://github.com/oceanbase/oceanbase
+git clone https://github.com/oceanbase/oceanbase-plugin-dev-kit
 # 初始化
-cd oceanbase && bash build.sh --init
+cd oceanbase-plugin-dev-kit
 # 执行安装命令，使用 --prefix 参数指定安装的目录，这里使用 build_debug/usr/local
-cd build_debug
-cmake --install . --component plugin-devel --prefix ./usr/local
+mkdir build && cd build
+cmake -DOCEANBASE_GIT_TAG=master ..
+cmake --install . --prefix ./usr/local
 
 # 编译自己的开发库
 cd `/your/plugin/dev/path`
 mkdir build
 cd build
 # 使用 -DCMAKE_PREFIX_PATH 参数指定 OceanBase插件开发库安装目录
-cmake -DCMAKE_PREFIX_PATH=`/your/oceanbase/build_debug/usr/local` ..
+cmake -DCMAKE_PREFIX_PATH=`/your/oceanbase-plugin-dev-kit/build/usr/local` ..
 make
 ```
 

@@ -80,7 +80,7 @@ make
 开发编译插件时，仅依赖了OceanBase插件开发库中的头文件，CMake的依赖是可选项，如果需要，你可以编写自己的Makefile文件或直接用编译器编译插件库。
 
 ## oceanbase-plugin-devel 提供哪些内容
-默认情况下，开发包会安装在 /usr/local 目录下，在这里可以看到
+默认情况下，开发包会安装在 /usr/ 目录下，在这里可以看到
 
 ```bash
 .
@@ -163,8 +163,8 @@ TARGET_LINK_LIBRARIES (${PLUGIN_NAME} PRIVATE library1 library2)
 
 其它的依赖项，比如链接时链接库查找目录、头文件目录、编译选项等，也可以使用 `TARGET_XXX(${PLUGIN_NAME} PRIVATE option1 option2)`添加。
 
-## 如何不安装开发库oceanbase-plugin-devel到系统目录
-使用下面的命令可以将RPM包安装到当前目录的 ./usr/local 下，也就是 $PWD/usr/local
+## 如何不安装开发库oceanbase-plugin-dev-kit到系统目录
+使用下面的命令可以将RPM包安装到当前目录的 ./usr/ 下，也就是 $PWD/usr/
 
 ```bash
 # pkgname 是 oceanbase-plugin-devel 的RPM包文件名
@@ -174,7 +174,7 @@ rpm2cpio `pkgname` | cpio -ivd
 也可以使用下面的命令安装到指定目录（需要sudo权限）：
 
 ```bash
-# pkgname 是 oceanbase-plugin-devel 的RPM包文件名
+# pkgname 是 oceanbase-plugin-dev-kit 的RPM包文件名
 # /your/install/path 是你想要安装的目录
 rpm -ivh `pkgname` --prefix `/your/install/path`
 ```
@@ -185,11 +185,11 @@ rpm -ivh `pkgname` --prefix `/your/install/path`
 mkdir build
 cd build
 # 使用 -DCMAKE_PREFIX_PATH 参数指定安装目录
-cmake -DCMAKE_PREFIX_PATH=`/oceanbase-plugin-devel/install/prefix` ..
+cmake -DCMAKE_PREFIX_PATH=`/oceanbase-plugin-dev-kit/install/prefix` ..
 make
 ```
 
-## 可以不使用开发包oceanbase-plugin-devel开发插件吗
+## 可以不使用开发包oceanbase-plugin-dev-kit开发插件吗
 如果要基于比较新的插件接口开发，而OceanBase还没有发包，或者没有对应某个操作系统的包，也可以基于OceanBase源码开发，步骤如下：
 
 ```bash

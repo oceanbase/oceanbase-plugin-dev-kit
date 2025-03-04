@@ -7,6 +7,7 @@ title: 开发者文档
 | **版本** | **日期** | **变更内容** | **变更原因** |
 | --- | --- | --- | --- |
 | 1.0 | 2024-12-23 | | 创建 |
+| 1.1 | 2025-03-04 | 下载开发套件 | 开发套件已发布 |
 
 
 本篇文档介绍如何使用OceanBase的开发套件开发插件。
@@ -20,8 +21,10 @@ yum install -y cmake make glibc-devel glibc-headers gcc gcc-c++
 ```
 
 ## 下载oceanbase plugin开发套件
-> 即将发布
+
 ```bash
+yum install -y yum-utils
+yum-config-manager --add-repo https://mirrors.aliyun.com/oceanbase/OceanBase.repo
 yum install -y oceanbase-plugin-dev-kit
 ```
 

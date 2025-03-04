@@ -2,7 +2,7 @@ site_name: OceanBase Plugin Development Kit
 site_url: https://oceanbase.github.io/oceanbase-plugin-dev-kit
 repo_url: https://github.com/oceanbase/oceanbase-plugin-dev-kit
 repo_name: oceanbase/oceanbase-plugin-dev-kit
-edit_uri: edit/main/docs/
+edit_uri: edit/main/docs/zh/
 copyright: Copyright © 2024 OceanBase
 docs_dir: ../zh
 site_dir: ../site

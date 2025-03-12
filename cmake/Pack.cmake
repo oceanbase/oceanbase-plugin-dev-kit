@@ -22,6 +22,8 @@ set(CPACK_RPM_PACKAGE_RELEASE ${PACKAGE_RELEASE})
 message(STATUS "CPACK_RPM_PACKAGE_RELEASE is ${CPACK_RPM_PACKAGE_RELEASE}")
 # RPM doesn't support this changelog format
 # set(CPACK_RPM_CHANGELOG_FILE ${PROJECT_SOURCE_DIR}/CHANGELOG.md)
+# The directory below conflicts with cmake-filesystem/cmake-2.8
+list(APPEND CPACK_RPM_EXCLUDE_FROM_AUTO_FILELIST_ADDITION "/usr/lib64/cmake")
 
 set(CPACK_DEBIAN_FILE_NAME          DEB-DEFAULT)
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "OceanBase")

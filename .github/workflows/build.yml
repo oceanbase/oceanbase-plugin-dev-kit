@@ -26,5 +26,4 @@ jobs:
       run: |
         mkdir build
         cd build
-        cmake .. -DPACKAGE_RELEASE=`date "+%Y%m%d%H%M%S"` -DPACKAGE_VERSION=0.1.0
-
+        cmake .. -DPACKAGE_RELEASE=`date "+%Y%m%d%H%M%S"`

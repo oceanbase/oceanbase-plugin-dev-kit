@@ -24,7 +24,7 @@ jobs:
     - name: Build
       shell: bash
       run: |
-	mkdir build
+        mkdir build
         cd build
         cmake .. -DPACKAGE_RELEASE=`date "+%Y%m%d%H%M%S"` -DPACKAGE_VERSION=0.1.0
 

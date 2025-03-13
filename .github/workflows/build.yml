@@ -27,3 +27,5 @@ jobs:
         mkdir build
         cd build
         cmake .. -DPACKAGE_RELEASE=`date "+%Y%m%d%H%M%S"`
+    - name: Generate Package
+      run: cd build && cpack -G RPM,DEB,ZIP

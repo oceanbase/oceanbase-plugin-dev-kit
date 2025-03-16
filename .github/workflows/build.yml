@@ -28,7 +28,8 @@ jobs:
       run: |
         mkdir build
         cd build
-        version=$(echo $TAG_NAME | grep -P '(\d*\.\d*\.\d*)' --only-matching)
+        version=$(echo ${TAG_NAME}-0.1.0 | grep -P '(\d*\.\d*\.\d*)' --only-matching)
+        version=$(echo ${version} | awk '{print $0}')
         cmake .. -DPACKAGE_RELEASE=`date "+%Y%m%d%H%M%S"` -DPACKAGE_VERSION=${version}
     - name: Generate Packages
       run: cd build && cpack -G RPM && cpack -G DEB && cpack -G TGZ

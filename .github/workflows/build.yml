@@ -29,3 +29,16 @@ jobs:
         cmake .. -DPACKAGE_RELEASE=`date "+%Y%m%d%H%M%S"`
     - name: Generate Packages
       run: cd build && cpack -G RPM && cpack -G DEB && cpack -G TGZ
+
+    - name: Install DEB
+      run: |
+        cd build
+        apt-get install ./oceanbase-plugin-dev-kit*.deb
+
+    - name: Build Examples
+      run: |
+        cd /usr/share/examples/ObPlugin/ftparser
+        mkdir build && cd build
+        cmake ..
+        make
+

@@ -37,7 +37,9 @@ jobs:
 
     - name: Build Examples
       run: |
-        cd /usr/share/examples/ObPlugin/ftparser
+        mkdir tmp && cd tmp
+        cp -rf /usr/share/examples/ObPlugin/ftparser ./
+        cd ftparser
         mkdir build && cd build
         cmake ..
         make

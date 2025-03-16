@@ -33,7 +33,7 @@ jobs:
     - name: Install DEB
       run: |
         cd build
-        apt-get install ./oceanbase-plugin-dev-kit*.deb
+        sudo apt-get install ./oceanbase-plugin-dev-kit*.deb
 
     - name: Build Examples
       run: |

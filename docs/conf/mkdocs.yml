@@ -16,6 +16,7 @@ nav:
     - 插件开发者手册: how-to-dev.md
     - 新增插件: add-new-plugin.md
     - 构建手册: how-to-build.md
+    - CHANGELOG: changelog.md
   - API 手册: doxy/html/index.html
 
 markdown_extensions:

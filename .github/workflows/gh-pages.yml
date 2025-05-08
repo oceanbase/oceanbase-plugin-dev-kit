@@ -35,6 +35,11 @@ jobs:
           mkdir build && cd build
           cmake .. -DOCEANBASE_GIT_REPO=https://github.com/oceanbase/oceanbase.git -DOCEANBASE_GIT_TAG=master -DPACKAGE_RELEASE=123456 -DPACKAGE_VERSION=0.1.0
 
+      - name: Generate CHANGELOG
+        run: |
+          ls v[0-9]*.[0-9]*.[0-9]*.md | grep -oP "[0-9]+\.[0-9]+\.[0-9]+" | sort -t. -n | xargs -I {} cat v{}.md > changelog.md
+        working-directory: ./docs/zh/
+
       - name: Setup Pages
         run: |
           cp -rf conf/assets zh/assets

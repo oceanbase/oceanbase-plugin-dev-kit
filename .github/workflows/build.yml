@@ -26,7 +26,7 @@ jobs:
     - name: Detect Tag Version
       run: |
         version=$(echo ${TAG_NAME}-0.1.0 | grep -P '(\d*\.\d*\.\d*)' --only-matching)
-        version=$(echo ${version} | awk '{print $0}')
+        version=$(echo ${version} | awk '{print $1}')
         echo "TAG_VERSION=${version}" >> $GITHUB_ENV
 
     - name: Build

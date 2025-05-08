@@ -3,7 +3,7 @@ name: build
 on:
   push:
     branches: [ "main" ]
-    tags: 'v-[0-9]+.[0-9]+.[0-9]+'
+    tags: 'v[0-9]+.[0-9]+.[0-9]+'
   pull_request:
     branches: [ "main" ]
 
@@ -30,7 +30,9 @@ jobs:
         cd build
         version=$(echo ${TAG_NAME}-0.1.0 | grep -P '(\d*\.\d*\.\d*)' --only-matching)
         version=$(echo ${version} | awk '{print $0}')
-        cmake .. -DPACKAGE_RELEASE=`date "+%Y%m%d%H%M%S"` -DPACKAGE_VERSION=${version}
+	oceanbase_commit_id=$(grep OCEANBASE_COMMIT_ID ../docs/zh/changelog/v${version}.md | grep -oP "[a-f0-9]*")
+        cmake .. -DPACKAGE_RELEASE=`date "+%Y%m%d%H%M%S"` -DPACKAGE_VERSION=${version} -DOCEANBASE_GIT_TAG=${oceanbase_commit_id}
+
     - name: Generate Packages
       run: cd build && cpack -G RPM && cpack -G DEB && cpack -G TGZ
 
@@ -59,4 +61,5 @@ jobs:
         update_latest_release: true
         draft: true
         overwrite: true
+	default_release_body_path: docs/zh/changelog/v0.1.0.md
 

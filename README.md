@@ -32,4 +32,4 @@
 - [API 手册](https://oceanbase.github.io/oceanbase-plugin-dev-kit/doxy/html/index.html)；
 - [新增插件](https://oceanbase.github.io/oceanbase-plugin-dev-kit/add-new-plugin/)：如何给OceanBase新增一个类型的插件。
 
-如果有任何问题或建议，欢迎提[Issue](https://github.com/oceanbase/oceanbase-plugin-dev-kit/issues)。
+如果有任何问题或建议，欢迎提[Issue](https://github.com/oceanbase/oceanbase-plugin-dev-kit/issues)，或添加微信 hnwyllmm_126 （备注 oceanbase 插件）进群讨论。
